@@ -1,3 +1,9 @@
+server:
+  port: 8081
 spring:
   application:
     name: marketplace-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/marketplace-db
+    username: marketplace-db-user
+    password: marketplace-db-pass
