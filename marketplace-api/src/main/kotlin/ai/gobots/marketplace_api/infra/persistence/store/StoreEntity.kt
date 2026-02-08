@@ -1,4 +1,4 @@
-package ai.gobots.marketplace_api.infra.persistence
+package ai.gobots.marketplace_api.infra.persistence.store
 
 import ai.gobots.marketplace_api.core.domain.Store
 import jakarta.persistence.Column

@@ -1,6 +1,7 @@
-package ai.gobots.marketplace_api.infra.persistence
+package ai.gobots.marketplace_api.infra.persistence.webhook
 
 import ai.gobots.marketplace_api.core.domain.Webhook
+import ai.gobots.marketplace_api.infra.persistence.store.StoreEntity
 import jakarta.persistence.*
 
 @Entity
