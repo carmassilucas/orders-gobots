@@ -1,6 +1,8 @@
 package ai.gobots.marketplace_api.infra.persistence.order
 
 import ai.gobots.marketplace_api.core.domain.Order
+import ai.gobots.marketplace_api.core.domain.Status
+import ai.gobots.marketplace_api.core.domain.Store
 import ai.gobots.marketplace_api.infra.persistence.status.StatusEntity
 import ai.gobots.marketplace_api.infra.persistence.store.StoreEntity
 import jakarta.persistence.*
@@ -33,4 +35,13 @@ data class OrderEntity(
         store = StoreEntity(order.store),
         amount = order.amount
     )
+
+    fun toDomain(): Order {
+        return Order(
+            id = id,
+            store = Store(store.id, store.name),
+            amount = amount,
+            status = Status(status.id, status.status)
+        )
+    }
 }

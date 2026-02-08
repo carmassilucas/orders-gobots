@@ -5,6 +5,7 @@ import ai.gobots.marketplace_api.core.repository.OrderRepository
 import ai.gobots.marketplace_api.infra.persistence.order.OrderEntity
 import ai.gobots.marketplace_api.infra.persistence.order.OrderEntityRepository
 import org.springframework.stereotype.Component
+import java.util.*
 
 @Component
 class OrderRepositoryAdapter(
@@ -14,4 +15,7 @@ class OrderRepositoryAdapter(
     override fun save(order: Order) {
         repository.save(OrderEntity(order))
     }
+
+    override fun findById(id: UUID): Order? =
+        repository.findById(id).orElse(null)?.toDomain()
 }
