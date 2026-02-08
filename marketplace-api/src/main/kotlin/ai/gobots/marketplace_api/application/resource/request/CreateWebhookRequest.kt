@@ -17,7 +17,7 @@ data class CreateWebhookRequest(
     fun toDomain(): Webhook {
         val stores = storeIds.map {
             Store(it, null)
-        }.toMutableList()
+        }.toMutableSet()
         return Webhook(null, callbackUrl, stores)
     }
 }

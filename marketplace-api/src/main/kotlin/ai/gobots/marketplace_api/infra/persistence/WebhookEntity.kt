@@ -29,7 +29,7 @@ data class WebhookEntity(
         joinColumns = [JoinColumn(name = "webhook_id")],
         inverseJoinColumns = [JoinColumn(name = "store_id")]
     )
-    val stores: MutableList<StoreEntity>
+    val stores: MutableSet<StoreEntity>
 ) {
 
     constructor(webhook: Webhook) : this(
@@ -37,13 +37,13 @@ data class WebhookEntity(
         callbackUrl = webhook.callbackUrl,
         stores = webhook.stores.map {
             StoreEntity(it)
-        }.toMutableList()
+        }.toMutableSet()
     )
 
     fun toDomain(): Webhook {
         val storesDomain = stores.map {
             it.toDomain()
-        }.toMutableList()
+        }.toMutableSet()
         return Webhook(id, callbackUrl, storesDomain)
     }
 }
