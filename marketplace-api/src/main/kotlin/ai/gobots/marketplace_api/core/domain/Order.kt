@@ -7,5 +7,5 @@ data class Order(
     val id: UUID? = null,
     val store: Store,
     val amount: BigDecimal,
-    val status: Status
+    var status: Status
 )

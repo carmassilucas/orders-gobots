@@ -10,13 +10,25 @@ data class Status(
         val status: String
     ) {
         CREATED(1, "created"),
-        SHIPPED(2, "shipped"),
-        PAID(3, "paid"),
+        PAID(2, "paid"),
+        SHIPPED(3, "shipped"),
         COMPLETED(4, "completed"),
         CANCELED(5, "canceled");
 
         fun get(): Status {
             return Status(id, status)
+        }
+
+        fun isValidTransition(to: StatusName): Boolean =
+            transitions[this]?.contains(to) ?: false
+
+        // todo: technical debt - use state machine
+        companion object {
+            private val transitions = mapOf(
+                CREATED to setOf(PAID, CANCELED),
+                PAID to setOf(SHIPPED, CANCELED),
+                SHIPPED to setOf(COMPLETED)
+            )
         }
     }
 }

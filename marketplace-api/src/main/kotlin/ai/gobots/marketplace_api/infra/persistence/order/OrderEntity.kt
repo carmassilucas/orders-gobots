@@ -31,6 +31,7 @@ data class OrderEntity(
 ) {
 
     constructor(order: Order) : this(
+        id = order.id,
         status = StatusEntity(order.status),
         store = StoreEntity(order.store),
         amount = order.amount
