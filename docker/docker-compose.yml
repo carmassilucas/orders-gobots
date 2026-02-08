@@ -1,7 +1,6 @@
 services:
   marketplace-db:
     container_name: marketplace-db
-
     image: postgres:18.1-alpine
     ports:
       - "5432:5432"
@@ -11,6 +10,19 @@ services:
       POSTGRES_DB: marketplace-db
       POSTGRES_USER: marketplace-db-user
       POSTGRES_PASSWORD: marketplace-db-pass
+
+  receiver-db:
+    container_name: receiver-db
+    image: mongo:8.2.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo_data:/data/db"
+    environment:
+      MONGO_INITDB_DATABASE: receiver-db
+      MONGO_INITDB_ROOT_USERNAME: receiver-db-user
+      MONGO_INITDB_ROOT_PASSWORD: receiver-db-pass
+
 volumes:
   pg_data:
-    driver: local
+  mongo_data:

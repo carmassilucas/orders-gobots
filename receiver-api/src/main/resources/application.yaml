@@ -1,3 +1,17 @@
+server:
+  port: 8082
 spring:
   application:
     name: receiver-api
+  data:
+    mongodb:
+      auto-index-creation: true
+  mongodb:
+    host: localhost
+    port: 27017
+    database: receiver-db
+    username: receiver-db-user
+    password: receiver-db-pass
+    authentication-database: admin
+    representation:
+      uuid: standard
