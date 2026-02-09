@@ -1,9 +1,7 @@
-package ai.gobots.marketplace_api.application.adapter
+package ai.gobots.marketplace_api.infra.persistence.webhook
 
 import ai.gobots.marketplace_api.core.domain.Webhook
 import ai.gobots.marketplace_api.core.repository.WebhookRepository
-import ai.gobots.marketplace_api.infra.persistence.webhook.WebhookEntity
-import ai.gobots.marketplace_api.infra.persistence.webhook.WebhookEntityRepository
 import org.springframework.stereotype.Component
 
 @Component

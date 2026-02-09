@@ -1,9 +1,7 @@
-package ai.gobots.marketplace_api.application.adapter
+package ai.gobots.marketplace_api.infra.persistence.status
 
 import ai.gobots.marketplace_api.core.domain.Status
 import ai.gobots.marketplace_api.core.repository.StatusRepository
-import ai.gobots.marketplace_api.infra.persistence.status.StatusEntity
-import ai.gobots.marketplace_api.infra.persistence.status.StatusEntityRepository
 import org.springframework.stereotype.Component
 
 @Component

@@ -1,11 +1,9 @@
-package ai.gobots.marketplace_api.application.adapter
+package ai.gobots.marketplace_api.infra.persistence.order
 
 import ai.gobots.marketplace_api.core.domain.Order
 import ai.gobots.marketplace_api.core.repository.OrderRepository
-import ai.gobots.marketplace_api.infra.persistence.order.OrderEntity
-import ai.gobots.marketplace_api.infra.persistence.order.OrderEntityRepository
 import org.springframework.stereotype.Component
-import java.util.*
+import java.util.UUID
 
 @Component
 class OrderRepositoryAdapter(

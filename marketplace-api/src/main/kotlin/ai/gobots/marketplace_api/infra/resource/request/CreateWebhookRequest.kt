@@ -1,4 +1,4 @@
-package ai.gobots.marketplace_api.application.resource.request
+package ai.gobots.marketplace_api.infra.resource.request
 
 import ai.gobots.marketplace_api.core.domain.Store
 import ai.gobots.marketplace_api.core.domain.Webhook

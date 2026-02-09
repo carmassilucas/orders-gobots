@@ -1,6 +1,6 @@
 package ai.gobots.receiver_api.application.usecase
 
-import ai.gobots.receiver_api.application.client.OrderClient
+import ai.gobots.receiver_api.infra.client.OrderClient
 import ai.gobots.receiver_api.application.mapper.EventMapper
 import ai.gobots.receiver_api.core.repository.EventRepository
 import ai.gobots.receiver_api.infra.resource.request.CreateEventRequest

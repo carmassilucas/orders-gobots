@@ -1,6 +1,6 @@
 package ai.gobots.marketplace_api.application.usecase
 
-import ai.gobots.marketplace_api.application.resource.request.CreateOrderRequest
+import ai.gobots.marketplace_api.infra.resource.request.CreateOrderRequest
 import ai.gobots.marketplace_api.core.exception.StoreNotFoundException
 import ai.gobots.marketplace_api.core.repository.OrderRepository
 import ai.gobots.marketplace_api.core.repository.StoreRepository

@@ -1,6 +1,6 @@
 package ai.gobots.receiver_api.application.mapper
 
-import ai.gobots.receiver_api.application.client.request.FindOrderByIdResponse
+import ai.gobots.receiver_api.infra.client.request.FindOrderByIdResponse
 import ai.gobots.receiver_api.core.domain.Event
 import ai.gobots.receiver_api.core.domain.OrderSnapshot
 import ai.gobots.receiver_api.infra.resource.request.CreateEventRequest

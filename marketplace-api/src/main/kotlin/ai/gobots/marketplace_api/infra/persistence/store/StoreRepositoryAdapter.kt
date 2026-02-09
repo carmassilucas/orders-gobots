@@ -1,8 +1,7 @@
-package ai.gobots.marketplace_api.application.adapter
+package ai.gobots.marketplace_api.infra.persistence.store
 
 import ai.gobots.marketplace_api.core.domain.Store
 import ai.gobots.marketplace_api.core.repository.StoreRepository
-import ai.gobots.marketplace_api.infra.persistence.store.StoreEntityRepository
 import org.springframework.stereotype.Component
 import java.util.UUID
 import kotlin.jvm.optionals.getOrNull

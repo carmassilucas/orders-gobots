@@ -1,4 +1,4 @@
-package ai.gobots.receiver_api.application.client.request
+package ai.gobots.receiver_api.infra.client.request
 
 import java.math.BigDecimal
 import java.util.UUID
