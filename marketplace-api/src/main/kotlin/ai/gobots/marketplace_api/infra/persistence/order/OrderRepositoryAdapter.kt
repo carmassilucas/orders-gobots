@@ -10,8 +10,8 @@ class OrderRepositoryAdapter(
     private val repository: OrderEntityRepository
 ): OrderRepository {
 
-    override fun save(order: Order) {
-        repository.save(OrderEntity(order))
+    override fun save(order: Order): Order {
+        return repository.save(OrderEntity(order)).toDomain()
     }
 
     override fun findById(id: UUID): Order? =

@@ -25,9 +25,8 @@ class OrderResource(
 ) {
 
     @PostMapping
-    fun create(@RequestBody requestBody: CreateOrderRequest): ResponseEntity<Void> {
-        create.execute(requestBody)
-        return ResponseEntity.status(HttpStatus.CREATED).build()
+    fun create(@RequestBody requestBody: CreateOrderRequest): ResponseEntity<UUID> {
+        return ResponseEntity.status(HttpStatus.CREATED).body(create.execute(requestBody))
     }
 
     @GetMapping("/{id}")

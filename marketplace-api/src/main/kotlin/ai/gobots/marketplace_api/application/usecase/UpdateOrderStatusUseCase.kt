@@ -12,7 +12,8 @@ import java.util.*
 
 @Service
 class UpdateOrderStatusUseCase(
-    private val repository: OrderRepository
+    private val repository: OrderRepository,
+    private val sendEvent: SendEventUseCase
 ) {
 
     private val logger: Logger = LoggerFactory.getLogger(javaClass)
@@ -33,7 +34,9 @@ class UpdateOrderStatusUseCase(
         }
 
         order.status = to.get()
-        repository.save(order)
+        val updated = repository.save(order)
+
+        sendEvent.execute(updated)
     }
 
     private fun String.toStatusName(): StatusName =
