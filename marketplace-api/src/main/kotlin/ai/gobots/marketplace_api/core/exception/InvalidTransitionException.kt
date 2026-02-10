@@ -6,7 +6,7 @@ class InvalidTransitionException(
     from: StatusName,
     to: StatusName,
 ) : MarketplaceAPIException(
-    statusCode = 404,
+    statusCode = 400,
     title = "Invalid transition",
     detail = "Cannot update order status from ${from.status} to ${to.status}"
 )
