@@ -113,3 +113,34 @@ curl -X PATCH "http://localhost:8081/orders/ORDER_ID/STATUS"
 ```
 
 </details>
+
+---
+
+## 🍃 Consultar MongoDB
+
+Se você quiser verificar os snapshots salvos no MongoDB diretamente pelo terminal, sem precisar instalar nenhum client ou entrar no shell interativo, use o seguinte comando:
+
+> [!NOTE]
+> Esse comando faz a autenticação no servidor de banco de dados do MongoDB, seleciona o banco de dados *receiver-db*, busca todos os documentos na coleção *order_events* e formata a saída de forma amigável
+
+```bash
+$ docker exec -it receiver-db mongosh -u receiver-db-user -p receiver-db-pass --authenticationDatabase admin --eval "db.getSiblingDB('receiver-db').order_events.find().pretty()"
+```
+
+---
+
+## 🔍 Monitoramento e Saúde
+
+As APIs possuem um endpoint do Spring Actuator configurado para o monitoramento da saúde de cada aplicação:
+
+- **Marletplace API:** http://localhost:8081/actuator/health
+- **Receiver API:** http://localhost:8082/actuator/health
+
+---
+
+## 📊 Ciclo de Vida do Pedido
+
+O diagrama a seguir ilustra os possíveis fluxos de estado de um pedido e como ele pode evoluir ao longo do seu ciclo de vida.
+Ele serve para facilitar o entendimento das transições, mostrando quais status podem ser alcançados a partir de cada etapa.
+
+![Ciclo de Vida do Pedido](./image/ciclo-vida-pedido.png)
