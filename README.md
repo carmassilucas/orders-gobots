@@ -62,3 +62,54 @@ $ docker ps
 ```
 
 ---
+
+## ☕ Como Usar os Endpoints
+
+> [!NOTE]
+> É possível encontrar uma collection pronta na pasta `collection`, a partir da raiz do projeto. Caso o import não funcione, você pode importar os endpoints manualmente via cURL.
+
+<details>
+
+<summary>Endpoints da Marketplace API para gerenciamento de pedidos</summary>
+
+### 1️⃣ Cadastrar Webhook
+
+**Finalidade:** Cadastrar um novo webhook relacionado às lojas já cadastradas
+
+```bash
+# Os IDs das lojas foram inseridos hardcoded via SQL no banco de dados, não os altere
+curl -X POST "http://localhost:8081/webhooks" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "storeIds": [
+      "894678dd-1a6d-4222-bec7-58c710a6ee07",
+      "8ad3072a-242b-42ff-b7a7-23e1a986abe2"
+    ],
+    "callbackUrl": "http://receiver-api:8082/events"
+  }'
+```
+
+### 2️⃣ Cadastrar Pedido
+
+**Finalidade:** Cadastrar um novo pedido para uma loja
+
+```bash
+# Substitua VALUE pelo valor desejado
+curl -X POST "http://localhost:8081/orders" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "storeId": "894678dd-1a6d-4222-bec7-58c710a6ee07",
+    "amount": "VALUE"
+  }'
+```
+
+### 3️⃣ Atualizar Stataus do Pedido
+
+**Finalidade:** Atualizar o status de um pedido
+
+```bash
+# Substitua ORDER_ID pelo id do pedido e STATUS pelo nome do status que deseja atualizar
+curl -X PATCH "http://localhost:8081/orders/ORDER_ID/STATUS"
+```
+
+</details>
