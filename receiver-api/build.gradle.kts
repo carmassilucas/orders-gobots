@@ -48,13 +48,6 @@ kotlin {
     }
 }
 
-kapt {
-    arguments {
-        arg("mapstruct.defaultComponentModel", "spring")
-    }
-}
-
-
 tasks.withType<Test> {
     useJUnitPlatform()
 }
