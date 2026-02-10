@@ -4,7 +4,7 @@ import java.time.Instant
 import java.util.*
 
 data class Event(
-    val eventId: UUID,
+    val idempotencyKey: UUID,
     val type: String,
     val orderId: UUID,
     val storeId: UUID,
