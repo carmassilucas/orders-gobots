@@ -20,8 +20,6 @@ repositories {
 	mavenCentral()
 }
 
-extra["springCloudVersion"] = "2025.1.0"
-
 dependencies {
 	implementation("org.springframework.boot:spring-boot-h2console")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -30,22 +28,13 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")
 	implementation("org.flywaydb:flyway-database-postgresql")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
-	implementation("tools.jackson.module:jackson-module-kotlin")
+	implementation("io.github.openfeign:feign-jackson:13.6")
+	implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("org.postgresql:postgresql")
-	testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
-	testImplementation("org.springframework.boot:spring-boot-starter-flyway-test")
-	testImplementation("org.springframework.boot:spring-boot-starter-validation-test")
-	testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
-
-dependencyManagement {
-	imports {
-		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
-	}
 }
 
 kotlin {
