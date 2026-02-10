@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import java.util.UUID
 
-@FeignClient(name = "marketplace-api", url = "http://localhost:8081", path = "/orders")
+@FeignClient(
+    name = "marketplace-api",
+    url = $$"${microservices.marketplace-api.url}",
+    path = "/orders"
+)
 interface OrderClient {
 
     @GetMapping("/{id}")

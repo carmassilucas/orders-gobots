@@ -4,6 +4,10 @@ spring:
   application:
     name: marketplace-api
   datasource:
-    url: jdbc:postgresql://localhost:5432/marketplace-db
-    username: marketplace-db-user
-    password: marketplace-db-pass
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+management:
+  endpoint:
+    health:
+      show-details: always
