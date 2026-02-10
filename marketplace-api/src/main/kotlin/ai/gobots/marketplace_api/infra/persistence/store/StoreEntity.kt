@@ -19,7 +19,7 @@ data class StoreEntity(
     val id: UUID,
 
     @Column(name = "name", nullable = false)
-    val name: String?
+    val name: String
 ) {
 
     constructor(store: Store): this(

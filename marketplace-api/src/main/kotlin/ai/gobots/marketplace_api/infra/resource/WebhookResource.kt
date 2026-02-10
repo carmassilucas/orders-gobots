@@ -18,7 +18,7 @@ class WebhookResource(
 
     @PostMapping
     fun create(@Valid @RequestBody requestBody: CreateWebhookRequest): ResponseEntity<Void> {
-        create.execute(requestBody.toDomain())
+        create.execute(requestBody)
         return ResponseEntity.status(HttpStatus.CREATED).build()
     }
 }
