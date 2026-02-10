@@ -20,6 +20,15 @@ A comunicação entre os serviços é realizada via **Feign Client**, e todo o a
 
 ---
 
+## 📊 Ciclo de Vida do Pedido
+
+O diagrama a seguir ilustra os possíveis fluxos de estado de um pedido e como ele pode evoluir ao longo do seu ciclo de vida.
+Ele serve para facilitar o entendimento das transições, mostrando quais status podem ser alcançados a partir de cada etapa.
+
+![Ciclo de Vida do Pedido](./images/ciclo-vida-pedido.png)
+
+---
+
 ## 🛠️ Principais Tecnologias
 
 - **Linguagem:** Kotlin  
@@ -135,12 +144,3 @@ As APIs possuem um endpoint do Spring Actuator configurado para o monitoramento 
 
 - **Marletplace API:** http://localhost:8081/actuator/health
 - **Receiver API:** http://localhost:8082/actuator/health
-
----
-
-## 📊 Ciclo de Vida do Pedido
-
-O diagrama a seguir ilustra os possíveis fluxos de estado de um pedido e como ele pode evoluir ao longo do seu ciclo de vida.
-Ele serve para facilitar o entendimento das transições, mostrando quais status podem ser alcançados a partir de cada etapa.
-
-![Ciclo de Vida do Pedido](./image/ciclo-vida-pedido.png)
