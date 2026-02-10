@@ -25,7 +25,9 @@ A comunicação entre os serviços é realizada via **Feign Client**, e todo o a
 O diagrama a seguir ilustra os possíveis fluxos de estado de um pedido e como ele pode evoluir ao longo do seu ciclo de vida.
 Ele serve para facilitar o entendimento das transições, mostrando quais status podem ser alcançados a partir de cada etapa.
 
-![Ciclo de Vida do Pedido](./images/ciclo-vida-pedido.png)
+<p align="center">
+  <img src="./images/ciclo-vida-pedido.png" alt="Ciclo de Vida do Pedido" width="350">
+</p>
 
 ---
 
