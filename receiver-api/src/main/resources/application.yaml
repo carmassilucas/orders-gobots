@@ -15,6 +15,10 @@ spring:
     authentication-database: ${SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE}
     representation:
       uuid: standard
+management:
+  endpoint:
+    health:
+      show-details: always
 microservices:
   marketplace-api:
     url: ${MARKETPLACE_API_URL}
