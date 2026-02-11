@@ -21,9 +21,11 @@ class SendEventUseCase(
     fun execute(order: Order) {
         logger.info("A new event order.{} occurred in the order domain", order.status.status)
 
+        // todo: technical debit: validate the existence of a webhook before creating or updating
         val webhook = webhookRepository.findByStore(order.store.id)
             ?: throw WebhookNotFoundException(order.store.name)
 
+        // todo: technical debit: iterate over multiple webhooks
         gateway.send(
             callbackUrl = webhook.callbackUrl,
             requestBody = OrderEventRequest(
